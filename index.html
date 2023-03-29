@@ -7,6 +7,43 @@
   box-sizing: border-box;
 }
 
+.legend {
+  display: flex;
+  justify-content: left;
+}
+
+.legend-item {
+  margin: 5px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.legend-item.plasmid {
+  background-color: #00CED1;
+}
+
+.legend-item.primer {
+  background-color: #FFA500;
+}
+
+.legend-item.cells {
+  background-color: #00FF00;
+}
+
+.legend-item.stabs {
+  background-color: #9932CC;
+}
+
+.legend-item.misc {
+  background-color: #FFC0CB;
+}
+
+.legend-item.empty {
+  background-color: #A9A9A9;
+}
+
+
 /* Create two unequal columns that floats next to each other */
 .column {
   float: left;
@@ -32,14 +69,15 @@
 /* Style for the buttons */
 button {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 10px;
   background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
-  width: 11.1%; /* add this to make the buttons take up 11.1% of the width */
+  width: 10%; /* add this to make the buttons take up 11.1% of the width */
+  padding-top: width;
   float: left; /* add this to float the buttons to the left */
   box-sizing: border-box; /* add this to include padding and border in the width calculation */
 }
@@ -64,135 +102,459 @@ button.active {
     }
     
     /* Individual button colors */
-    button[data-color="red"] {
-      background-color: red;
+    button[type="plasmid"] {
+      background-color: #00CED1;
+    }
+   
+    button[type="primer"] {
+      background-color: #FFA500;
+    }
+    
+	button[type="competent cells"] {
+      background-color: #00FF00;
+    }
+    
+	button[type="culture STABS"] {
+      background-color: #9932CC;
+    }
+    
+	button[type="misc"] {
+      background-color: #FFC0CB;
+    }
+    
+	button[type="empty"] {
+      background-color: #A9A9A9;
     }
 
-    button[data-color="blue"] {
-      background-color: blue;
-    }
-
-    button[data-color="green"] {
-      background-color: green;
-    }
-
-    button[data-color="yellow"] {
-      background-color: yellow;
-    }
-
-    button[data-color="purple"] {
-      background-color: purple;
-    }
+button:not(:last-child) {
+    margin-right: 5px;
+  }
 </style>
 </head>
 <body>
 
 <h2>Two Unequal Columns</h2>
+<div class="legend">
+  <div class="legend-item plasmid">Plasmid</div>
+  <div class="legend-item primer">Primer</div>
+  <div class="legend-item cells">Competent Cells</div>
+  <div class="legend-item stabs">Culture STABS</div>
+  <div class="legend-item misc">Misc</div>
+  <div class="legend-item empty">Empty</div>
+</div>
+
 
 <div class="row">
-  <div class="column left" style="background-color:#aaa;">
+  <div class="column left" style="background-color:white;">
     <div id="button-container">
-      <button class="button active" data-target="data1">HelixCam</button>
-      <button class="button" data-target="data2" data-color="blue">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data2">Button 2</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data3">Button 3</button>
-      <button class="button" data-target="data4">Button 4</button>
-      <button class="button" data-target="data4">Button 4</button>
+      <button class="button active" data-target="data1" type="empty">1</button>
+<button class="button" data-target="data2" type="empty">2</button>
+<button class="button" data-target="data3" type="empty">3</button>
+<button class="button" data-target="data4" type="empty">4</button>
+<button class="button" data-target="data5" type="empty">5</button>
+<button class="button" data-target="data6" type="empty">6</button>
+<button class="button" data-target="data7" type="empty">7</button>
+<button class="button" data-target="data8" type="empty">8</button>
+<button class="button" data-target="data9" type="empty">9</button>
+<button class="button" data-target="data10" type="empty">10</button>
+<button class="button" data-target="data11" type="empty">11</button>
+<button class="button" data-target="data12" type="empty">12</button>
+<button class="button" data-target="data13" type="empty">13</button>
+<button class="button" data-target="data14" type="empty">14</button>
+<button class="button" data-target="data15" type="empty">15</button>
+<button class="button" data-target="data16" type="empty">16</button>
+<button class="button" data-target="data17" type="empty">17</button>
+<button class="button" data-target="data18" type="empty">18</button>
+<button class="button" data-target="data19" type="empty">19</button>
+<button class="button" data-target="data20" type="empty">20</button>
+<button class="button" data-target="data21" type="empty">21</button>
+<button class="button" data-target="data22" type="empty">22</button>
+<button class="button" data-target="data23" type="empty">23</button>
+<button class="button" data-target="data24" type="empty">24</button>
+<button class="button" data-target="data25" type="empty">25</button>
+<button class="button" data-target="data26" type="empty">26</button>
+<button class="button" data-target="data27" type="empty">27</button>
+<button class="button" data-target="data28" type="empty">28</button>
+<button class="button" data-target="data29" type="empty">29</button>
+<button class="button" data-target="data30" type="empty">30</button>
+<button class="button" data-target="data31" type="empty">31</button>
+<button class="button" data-target="data32" type="empty">32</button>
+<button class="button" data-target="data33" type="empty">33</button>
+<button class="button" data-target="data34" type="empty">34</button>
+<button class="button" data-target="data35" type="empty">35</button>
+<button class="button" data-target="data36" type="empty">36</button>
+<button class="button" data-target="data37" type="empty">37</button>
+<button class="button" data-target="data38" type="empty">38</button>
+<button class="button" data-target="data39" type="empty">39</button>
+<button class="button" data-target="data40" type="empty">40</button>
+<button class="button" data-target="data41" type="empty">41</button>
+<button class="button" data-target="data42" type="empty">42</button>
+<button class="button" data-target="data43" type="empty">43</button>
+<button class="button" data-target="data44" type="empty">44</button>
+<button class="button" data-target="data45" type="empty">45</button>
+<button class="button" data-target="data46" type="empty">46</button>
+<button class="button" data-target="data47" type="empty">47</button>
+<button class="button" data-target="data48" type="empty">48</button>
+<button class="button" data-target="data49" type="empty">49</button>
+<button class="button" data-target="data50" type="empty">50</button>
+<button class="button" data-target="data51" type="empty">51</button>
+<button class="button" data-target="data52" type="empty">52</button>
+<button class="button" data-target="data53" type="empty">53</button>
+<button class="button" data-target="data54" type="empty">54</button>
+<button class="button" data-target="data55" type="empty">55</button>
+<button class="button" data-target="data56" type="empty">56</button>
+<button class="button" data-target="data57" type="empty">57</button>
+<button class="button" data-target="data58" type="empty">58</button>
+<button class="button" data-target="data59" type="empty">59</button>
+<button class="button" data-target="data60" type="empty">60</button>
+<button class="button" data-target="data61" type="empty">61</button>
+<button class="button" data-target="data62" type="empty">62</button>
+<button class="button" data-target="data63" type="empty">63</button>
+<button class="button" data-target="data64" type="empty">64</button>
+<button class="button" data-target="data65" type="empty">65</button>
+<button class="button" data-target="data66" type="empty">66</button>
+<button class="button" data-target="data67" type="empty">67</button>
+<button class="button" data-target="data68" type="empty">68</button>
+<button class="button" data-target="data69" type="empty">69</button>
+<button class="button" data-target="data70" type="empty">70</button>
+<button class="button" data-target="data71" type="empty">71</button>
+<button class="button" data-target="data72" type="empty">72</button>
+<button class="button" data-target="data73" type="empty">73</button>
+<button class="button" data-target="data74" type="empty">74</button>
+<button class="button" data-target="data75" type="empty">75</button>
+<button class="button" data-target="data76" type="empty">76</button>
+<button class="button" data-target="data77" type="empty">77</button>
+<button class="button" data-target="data78" type="empty">78</button>
+<button class="button" data-target="data79" type="empty">79</button>
+<button class="button" data-target="data80" type="empty">80</button>
+<button class="button" data-target="data81" type="empty">81</button>
     </div>
   </div>
-  <div class="column right" style="background-color:#bbb;">
-    <div id="data-container">
-      <div class="data active" id="data1">
-        <h2>Data 1</h2>
-        <p>Some data for button 1..</p>
-      </div>
-      <div class="data" id="data2">
-        <h2>Data 2</h2>
-        <p>Some data for button 2..</p>
-      </div>
-      <div class="data" id="data3">
-        <h2>Data 3</h2>
-        <p>Some data for button 3..</p>
-      </div>
-      <div class="data" id="data4">
-        <h2>Data 4</h2>
-        <p>Some data for button 4..</p>
-      </div>
+  <div class="column right" style="background-color:#F2F2F2;">
+    <div class="data active" id="data1">
+    <h2>Data 1</h2>
+    <p>Add data for 1..</p>
+</div>
+<div class="data active" id="data2">
+    <h2>Data 2</h2>
+    <p>Add data for 2..</p>
+</div>
+<div class="data active" id="data3">
+    <h2>Data 3</h2>
+    <p>Add data for 3..</p>
+</div>
+<div class="data active" id="data4">
+    <h2>Data 4</h2>
+    <p>Add data for 4..</p>
+</div>
+<div class="data active" id="data5">
+    <h2>Data 5</h2>
+    <p>Add data for 5..</p>
+</div>
+<div class="data active" id="data6">
+    <h2>Data 6</h2>
+    <p>Add data for 6..</p>
+</div>
+<div class="data active" id="data7">
+    <h2>Data 7</h2>
+    <p>Add data for 7..</p>
+</div>
+<div class="data active" id="data8">
+    <h2>Data 8</h2>
+    <p>Add data for 8..</p>
+</div>
+<div class="data active" id="data9">
+    <h2>Data 9</h2>
+    <p>Add data for 9..</p>
+</div>
+<div class="data active" id="data10">
+    <h2>Data 10</h2>
+    <p>Add data for 10..</p>
+</div>
+<div class="data active" id="data11">
+    <h2>Data 11</h2>
+    <p>Add data for 11..</p>
+</div>
+<div class="data active" id="data12">
+    <h2>Data 12</h2>
+    <p>Add data for 12..</p>
+</div>
+<div class="data active" id="data13">
+    <h2>Data 13</h2>
+    <p>Add data for 13..</p>
+</div>
+<div class="data active" id="data14">
+    <h2>Data 14</h2>
+    <p>Add data for 14..</p>
+</div>
+<div class="data active" id="data15">
+    <h2>Data 15</h2>
+    <p>Add data for 15..</p>
+</div>
+<div class="data active" id="data16">
+    <h2>Data 16</h2>
+    <p>Add data for 16..</p>
+</div>
+<div class="data active" id="data17">
+    <h2>Data 17</h2>
+    <p>Add data for 17..</p>
+</div>
+<div class="data active" id="data18">
+    <h2>Data 18</h2>
+    <p>Add data for 18..</p>
+</div>
+<div class="data active" id="data19">
+    <h2>Data 19</h2>
+    <p>Add data for 19..</p>
+</div>
+<div class="data active" id="data20">
+    <h2>Data 20</h2>
+    <p>Add data for 20..</p>
+</div>
+<div class="data active" id="data21">
+    <h2>Data 21</h2>
+    <p>Add data for 21..</p>
+</div>
+<div class="data active" id="data22">
+    <h2>Data 22</h2>
+    <p>Add data for 22..</p>
+</div>
+<div class="data active" id="data23">
+    <h2>Data 23</h2>
+    <p>Add data for 23..</p>
+</div>
+<div class="data active" id="data24">
+    <h2>Data 24</h2>
+    <p>Add data for 24..</p>
+</div>
+<div class="data active" id="data25">
+    <h2>Data 25</h2>
+    <p>Add data for 25..</p>
+</div>
+<div class="data active" id="data26">
+    <h2>Data 26</h2>
+    <p>Add data for 26..</p>
+</div>
+<div class="data active" id="data27">
+    <h2>Data 27</h2>
+    <p>Add data for 27..</p>
+</div>
+<div class="data active" id="data28">
+    <h2>Data 28</h2>
+    <p>Add data for 28..</p>
+</div>
+<div class="data active" id="data29">
+    <h2>Data 29</h2>
+    <p>Add data for 29..</p>
+</div>
+<div class="data active" id="data30">
+    <h2>Data 30</h2>
+    <p>Add data for 30..</p>
+</div>
+<div class="data active" id="data31">
+    <h2>Data 31</h2>
+    <p>Add data for 31..</p>
+</div>
+<div class="data active" id="data32">
+    <h2>Data 32</h2>
+    <p>Add data for 32..</p>
+</div>
+<div class="data active" id="data33">
+    <h2>Data 33</h2>
+    <p>Add data for 33..</p>
+</div>
+<div class="data active" id="data34">
+    <h2>Data 34</h2>
+    <p>Add data for 34..</p>
+</div>
+<div class="data active" id="data35">
+    <h2>Data 35</h2>
+    <p>Add data for 35..</p>
+</div>
+<div class="data active" id="data36">
+    <h2>Data 36</h2>
+    <p>Add data for 36..</p>
+</div>
+<div class="data active" id="data37">
+    <h2>Data 37</h2>
+    <p>Add data for 37..</p>
+</div>
+<div class="data active" id="data38">
+    <h2>Data 38</h2>
+    <p>Add data for 38..</p>
+</div>
+<div class="data active" id="data39">
+    <h2>Data 39</h2>
+    <p>Add data for 39..</p>
+</div>
+<div class="data active" id="data40">
+    <h2>Data 40</h2>
+    <p>Add data for 40..</p>
+</div>
+<div class="data active" id="data41">
+    <h2>Data 41</h2>
+    <p>Add data for 41..</p>
+</div>
+<div class="data active" id="data42">
+    <h2>Data 42</h2>
+    <p>Add data for 42..</p>
+</div>
+<div class="data active" id="data43">
+    <h2>Data 43</h2>
+    <p>Add data for 43..</p>
+</div>
+<div class="data active" id="data44">
+    <h2>Data 44</h2>
+    <p>Add data for 44..</p>
+</div>
+<div class="data active" id="data45">
+    <h2>Data 45</h2>
+    <p>Add data for 45..</p>
+</div>
+<div class="data active" id="data46">
+    <h2>Data 46</h2>
+    <p>Add data for 46..</p>
+</div>
+<div class="data active" id="data47">
+    <h2>Data 47</h2>
+    <p>Add data for 47..</p>
+</div>
+<div class="data active" id="data48">
+    <h2>Data 48</h2>
+    <p>Add data for 48..</p>
+</div>
+<div class="data active" id="data49">
+    <h2>Data 49</h2>
+    <p>Add data for 49..</p>
+</div>
+<div class="data active" id="data50">
+    <h2>Data 50</h2>
+    <p>Add data for 50..</p>
+</div>
+<div class="data active" id="data51">
+    <h2>Data 51</h2>
+    <p>Add data for 51..</p>
+</div>
+<div class="data active" id="data52">
+    <h2>Data 52</h2>
+    <p>Add data for 52..</p>
+</div>
+<div class="data active" id="data53">
+    <h2>Data 53</h2>
+    <p>Add data for 53..</p>
+</div>
+<div class="data active" id="data54">
+    <h2>Data 54</h2>
+    <p>Add data for 54..</p>
+</div>
+<div class="data active" id="data55">
+    <h2>Data 55</h2>
+    <p>Add data for 55..</p>
+</div>
+<div class="data active" id="data56">
+    <h2>Data 56</h2>
+    <p>Add data for 56..</p>
+</div>
+<div class="data active" id="data57">
+    <h2>Data 57</h2>
+    <p>Add data for 57..</p>
+</div>
+<div class="data active" id="data58">
+    <h2>Data 58</h2>
+    <p>Add data for 58..</p>
+</div>
+<div class="data active" id="data59">
+    <h2>Data 59</h2>
+    <p>Add data for 59..</p>
+</div>
+<div class="data active" id="data60">
+    <h2>Data 60</h2>
+    <p>Add data for 60..</p>
+</div>
+<div class="data active" id="data61">
+    <h2>Data 61</h2>
+    <p>Add data for 61..</p>
+</div>
+<div class="data active" id="data62">
+    <h2>Data 62</h2>
+    <p>Add data for 62..</p>
+</div>
+<div class="data active" id="data63">
+    <h2>Data 63</h2>
+    <p>Add data for 63..</p>
+</div>
+<div class="data active" id="data64">
+    <h2>Data 64</h2>
+    <p>Add data for 64..</p>
+</div>
+<div class="data active" id="data65">
+    <h2>Data 65</h2>
+    <p>Add data for 65..</p>
+</div>
+<div class="data active" id="data66">
+    <h2>Data 66</h2>
+    <p>Add data for 66..</p>
+</div>
+<div class="data active" id="data67">
+    <h2>Data 67</h2>
+    <p>Add data for 67..</p>
+</div>
+<div class="data active" id="data68">
+    <h2>Data 68</h2>
+    <p>Add data for 68..</p>
+</div>
+<div class="data active" id="data69">
+    <h2>Data 69</h2>
+    <p>Add data for 69..</p>
+</div>
+<div class="data active" id="data70">
+    <h2>Data 70</h2>
+    <p>Add data for 70..</p>
+</div>
+<div class="data active" id="data71">
+    <h2>Data 71</h2>
+    <p>Add data for 71..</p>
+</div>
+<div class="data active" id="data72">
+    <h2>Data 72</h2>
+    <p>Add data for 72..</p>
+</div>
+<div class="data active" id="data73">
+    <h2>Data 73</h2>
+    <p>Add data for 73..</p>
+</div>
+<div class="data active" id="data74">
+    <h2>Data 74</h2>
+    <p>Add data for 74..</p>
+</div>
+<div class="data active" id="data75">
+    <h2>Data 75</h2>
+    <p>Add data for 75..</p>
+</div>
+<div class="data active" id="data76">
+    <h2>Data 76</h2>
+    <p>Add data for 76..</p>
+</div>
+<div class="data active" id="data77">
+    <h2>Data 77</h2>
+    <p>Add data for 77..</p>
+</div>
+<div class="data active" id="data78">
+    <h2>Data 78</h2>
+    <p>Add data for 78..</p>
+</div>
+<div class="data active" id="data79">
+    <h2>Data 79</h2>
+    <p>Add data for 79..</p>
+</div>
+<div class="data active" id="data80">
+    <h2>Data 80</h2>
+    <p>Add data for 80..</p>
+</div>
+<div class="data active" id="data81">
+    <h2>Data 81</h2>
+    <p>Add data for 81..</p>
+</div>
     </div>
   </div>
 </div>
