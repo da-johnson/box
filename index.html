@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style for the buttons */
+button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 11.1%; /* add this to make the buttons take up 11.1% of the width */
+  float: left; /* add this to float the buttons to the left */
+  box-sizing: border-box; /* add this to include padding and border in the width calculation */
+}
+
+/* Style for the active button */
+button.active {
+  background-color: #3e8e41;
+}
+
+/* Style for the data to be displayed */
+.data {
+  display: none;
+}
+.data.active {
+  display: block;
+}
+
+.container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    
+    /* Individual button colors */
+    button[data-color="red"] {
+      background-color: red;
+    }
+
+    button[data-color="blue"] {
+      background-color: blue;
+    }
+
+    button[data-color="green"] {
+      background-color: green;
+    }
+
+    button[data-color="yellow"] {
+      background-color: yellow;
+    }
+
+    button[data-color="purple"] {
+      background-color: purple;
+    }
+</style>
+</head>
+<body>
+
+<h2>Two Unequal Columns</h2>
+
+<div class="row">
+  <div class="column left" style="background-color:#aaa;">
+    <div id="button-container">
+      <button class="button active" data-target="data1">HelixCam</button>
+      <button class="button" data-target="data2" data-color="blue">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data2">Button 2</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data3">Button 3</button>
+      <button class="button" data-target="data4">Button 4</button>
+      <button class="button" data-target="data4">Button 4</button>
+    </div>
+  </div>
+  <div class="column right" style="background-color:#bbb;">
+    <div id="data-container">
+      <div class="data active" id="data1">
+        <h2>Data 1</h2>
+        <p>Some data for button 1..</p>
+      </div>
+      <div class="data" id="data2">
+        <h2>Data 2</h2>
+        <p>Some data for button 2..</p>
+      </div>
+      <div class="data" id="data3">
+        <h2>Data 3</h2>
+        <p>Some data for button 3..</p>
+      </div>
+      <div class="data" id="data4">
+        <h2>Data 4</h2>
+        <p>Some data for button 4..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get all the buttons
+const buttons = document.querySelectorAll('.button');
+
+// Loop through the buttons and add a click event listener
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove the 'active' class from all buttons
+    buttons.forEach(button => button.classList.remove('active'));
+    // Add the 'active' class to the clicked button
+    button.classList.add('active');
+    
+    // Get the target data element based on the data-target attribute of the button
+    const targetData = document.querySelector(`#${button.dataset.target}`);
+    // Remove the 'active' class from all data elements
+    const allData = document.querySelectorAll('.data');
+    allData.forEach(data =>{
+data.classList.remove('active');
+});
+// Add the 'active' class to the target data element
+targetData.classList.add('active');
+});
+});
+</script>
+</body>
+</html>
